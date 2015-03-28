@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(228, 210, 162, 1);
+
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+header {
+    background-color: #566b24;
+    color: #eee;
+    padding: .75em 0;
+    display: -webkit-flex;
+    display: flex;
+}
+header h2 {
+    margin: 0;
+    line-height: 1.5em;
+}
+header div {
+    flex: 1;
+
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+}
+header div.search {
+    flex: 3;
+}
+header img {
+    height: 2em;
+}
+header .title {
+    text-transform: uppercase;
+}
+
+
+.search input {
+    width: 80%;
+    background: #eee url(../img/search.png) no-repeat scroll;
+    background-position: 98% 45%;
+    background-size: 16px 16px;
+    padding-right: 30px !important;
+}
+
+input[type=text] {
+    border: 1px solid #888;
+    padding: 0 .3em;
+    height: 1.5em;
+    line-height: 1.5em;
+    font-size: 1.2em;
+    position: relative;
+    margin: 0 auto;
+}
+input[type=text]:focus {
+    outline: none;
+    border: 1px solid #cfb590;
+    background-color: #fff;
+}
+
+
+
+.question-list {
+    margin: 3em 0 3em 0;
+
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    -webkit-align-items: center;
+    align-items: center;
+}
+.question-list .question {
+    background-color: rgba(249, 244, 229, 1);
+    margin: .1em;
+    border-radius: .2em;
+
+    width: 70vw;
+    height: 4em;
+    max-width: 50rem;
+
+    -webkit-flex: 1;
+    flex: 1;
+
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+
+    -webkit-align-items: center;
+    align-items: center;
+}
+.question-list .question:hover {
+    cursor: pointer;
+    background-color: #fff;
+}
+.question .score {
+    font-size: 1.5em;
+    
+    -webkit-flex: 1;
+    flex: 1;
+
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+
+    -webkit-align-items: stretch;
+    align-items: stretch;
+}
+.question .number-of-answers {
+    font-size: 1.5em;
+
+    -webkit-flex: 1;
+    flex: 1;
+
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+
+    -webkit-align-items: stretch;
+    align-items: stretch;
+}
+.question .text {
+    -webkit-flex: 3;
+    flex: 3;
+}
+
+
+.myCSSTable {
+    margin:50px;
+    padding:50px;
+    width:80%;
+    border:1px solid #cfb590;
+    border-radius: 0px;
+}
+.myCSSTable table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    box-shadow: 0 0 3px 1px #aaa;
+}
+.myCSSTable tr:hover td {
+    background-color:#ffffff;
+}
+.myCSSTable td {
+    vertical-align: center;
+    background-color: #eee9e2;
+    border: 1px solid #cfb590;
+    border-width: 0px 1px 1px 0px;
+    text-align: left;
+    padding: 26px;
+}
+.myCSSTable tr:last-child td {
+    border-width:0px 1px 0px 0px;
+}
+.myCSSTable tr td:last-child {
+    border-width:0px 0px 1px 0px;
+}
+.myCSSTable tr:last-child td:last-child {
+    border-width:0px 0px 0px 0px;
+}
+.myCSSTable tr:first-child td{
+    background:-o-linear-gradient(bottom, #eee9e2 5%, #eee9e2 100%);    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #eee9e2), color-stop(1, #eee9e2) );
+    background:-moz-linear-gradient( center top, #eee9e2 5%, #eee9e2 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#eee9e2", endColorstr="#eee9e2");  background: -o-linear-gradient(top,#eee9e2,eee9e2);
+    
+    background-color:#eee9e2;
+    border:0px solid #cfb590;
+    text-align:left;
+    border-width:0px 0px 1px 1px;
+    font-size:19px;
+    font-weight:normal;
+    color:#000000;
+}
+.myCSSTable tr:first-child td:first-child {
+    border-width:0px 0px 1px 0px;
+}
+.myCSSTable tr:first-child td:last-child {
+    border-width:0px 0px 1px 1px;
+}
