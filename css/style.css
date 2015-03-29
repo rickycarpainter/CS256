@@ -10,6 +10,7 @@ header {
     background-color: #566b24;
     color: #eee;
     padding: .75em 0;
+    box-shadow: 0 0 3px 4px hsl(44, 30%, 55%);
     display: -webkit-flex;
     display: flex;
 }
