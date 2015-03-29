@@ -144,6 +144,7 @@ input[type=text]:focus {
     background: url(../img/arrow-default.png) no-repeat scroll;
     background-size: 23px 23px;
     background-position: 80% 45%;
+    margin: 0 0 .5em 0;
 }
 .question button.downvote {
     background: url(../img/arrow-default.png) no-repeat scroll;
@@ -186,6 +187,7 @@ input[type=text]:focus {
 }
 .question .number-of-answers > div {
     font-size: .5em;
+    line-height: 2.5em;
 }
 .question .text {
 }
