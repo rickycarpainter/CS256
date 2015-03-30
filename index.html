@@ -57,7 +57,8 @@
 					answerHTML += "<button class=\"upvote\"></button>\n";
 					answerHTML += "<button class=\"downvote\"></button>\n";
 					answerHTML += "</div>\n";
-					answerHTML += "<div class=\"score\">"+currentAnswer.upvotes+"</div>\n";
+					var currentScore = currentAnswer.upvotes - currentAnswer.downvotes;
+					answerHTML += "<div class=\"score\">"+currentScore+"</div>\n";
 					answerHTML += "<div class=\"text\">"+currentAnswer.content+"</div>\n";
 					answerHTML += "</div>\n";
 					answerListDiv.innerHTML += answerHTML;
