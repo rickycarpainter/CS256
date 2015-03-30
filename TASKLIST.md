@@ -16,3 +16,10 @@ Ordered by priority, highest at the top. Finished tasks move to bottom
  - [x] fix arrow click so that it changes the vote count
  - [ ] reorder questions/answers when score changes
  - [ ] search?
+
+## From critique
+ - [x] align search bar
+ - [ ] needs more color/green in bottom area
+ - [ ] number of answers and "answers" are too close together
+ - [ ] leaf could be bigger or something
+ - [ ] transitions instead of jump loading of new answers?
