@@ -221,6 +221,7 @@ input[type=text]:focus {
     display: -webkit-flex;
     display: flex;
 
+    -webkit-justify-content: center;
     justify-content: center;
 
     line-height: 150%;
@@ -322,6 +323,7 @@ input[type=text]:focus {
     background: url(../img/arrow-default.png) no-repeat scroll;
     background-size: 24px 24px;
     background-position: 50% 45%;
+    -webkit-transform: scaleY(-1);
     transform: scaleY(-1);
 }
 .answer button.upvote:hover,
