@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html>
 
-<script src="js/model.js"></script>
-
-<script>
-    window.addEventListener("DOMContentLoaded", function() {
-        var m = new model();
-		loadModelDummyData(m);
-		var questions = m.getQuestions(null);
-		var questionList = document.getElementById('questions');
-		for(var i = 0; i < questions.length; i++){
-			var currentQuestion = questions[i];
-			var questionDiv = document.createElement('div');
-			questionDiv.className = "question";
-			var questionHTML = "";
-			questionHTML += "<div class=\"vote\">\n";
-			questionHTML += "<button class=\"upvote\"></button>\n";
-			questionHTML += "</div>\n";
-			questionHTML += "<div class=\"score\">"+currentQuestion.upvotes+"</div>\n";
-			questionHTML += "<div class=\"text\">"+currentQuestion.title+"</div>\n";
-			questionHTML += "<div class=\"answers\">"+m.getQuestionAnswers(currentQuestion.ID).length+"<div>answers</div></div>\n";
-			questionDiv.innerHTML =  questionHTML;
-			questionList.appendChild(questionDiv);
-		}
-    }, false);
-</script>
-
 <head>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/model.js"></script>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            var m = new model();
+		    loadModelDummyData(m);
+		    var questions = m.getQuestions(null);
+		    var questionList = document.getElementById('questions');
+		    for(var i = 0; i < questions.length; i++){
+			    var currentQuestion = questions[i];
+			    var questionDiv = document.createElement('div');
+			    questionDiv.className = "question";
+			    var questionHTML = "";
+			    questionHTML += "<div class=\"vote\">\n";
+			    questionHTML += "<button class=\"upvote\"></button>\n";
+			    questionHTML += "</div>\n";
+			    questionHTML += "<div class=\"score\">"+currentQuestion.upvotes+"</div>\n";
+			    questionHTML += "<div class=\"text\">"+currentQuestion.title+"</div>\n";
+			    questionHTML += "<div class=\"answers\">"+m.getQuestionAnswers(currentQuestion.ID).length+"<div>answers</div></div>\n";
+			    questionDiv.innerHTML =  questionHTML;
+			    questionList.appendChild(questionDiv);
+		    }
+        }, false);
+    </script>
 </head>
 <body>
     <header>
@@ -38,49 +37,49 @@
         </div>
     </header>
 
-<article>   
-    <div id="questions" class="question-list">
-	<!--
-        <div id="q1" class="question">
-            <div class="vote">
-                <button class="upvote"></button>
-            </div>
-            <div class="score">20</div>
-            <div class="text">What is a cell?</div>
-            <div class="answers">4<div>answers</div></div>
-        </div>
-        <div id="al1" class="answer-list">
-            <div id="a1" class="answer">
-                    <div class="vote">
+    <article>   
+        <div id="questions" class="question-list">
+	    <!--
+            <div id="q1" class="question">
+                <div class="vote">
                     <button class="upvote"></button>
-                    <button class="downvote"></button>
                 </div>
                 <div class="score">20</div>
-                <div class="text">A cell is a thing that...</div>
+                <div class="text">What is a cell?</div>
+                <div class="answers">4<div>answers</div></div>
             </div>
-        </div>
-        <div id="q2" class="question">
-            <div class="vote">
-                <button class="upvote"></button>
+            <div id="al1" class="answer-list">
+                <div id="a1" class="answer">
+                        <div class="vote">
+                        <button class="upvote"></button>
+                        <button class="downvote"></button>
+                    </div>
+                    <div class="score">20</div>
+                    <div class="text">A cell is a thing that...</div>
+                </div>
             </div>
-            <div class="score">20</div>
-            <div class="text">What is a cell?</div>
-            <div class="answers">4<div>answers</div></div>
+            <div id="q2" class="question">
+                <div class="vote">
+                    <button class="upvote"></button>
+                </div>
+                <div class="score">20</div>
+                <div class="text">What is a cell?</div>
+                <div class="answers">4<div>answers</div></div>
+            </div>
+	    -->
         </div>
-	-->
-    </div>
 
-    <div class="tag-list">
-        <div>
-            <h4>Popular Tags</h4>
-            <ul>
-                <li><a href="http://google.com">Cells</a></li>
-                <li><a href="http://google.com">Plants</a></li>
-                <li><a href="http://google.com">Animals</a></li>
-            </ul>
+        <div class="tag-list">
+            <div>
+                <h4>Popular Tags</h4>
+                <ul>
+                    <li><a href="http://google.com">Cells</a></li>
+                    <li><a href="http://google.com">Plants</a></li>
+                    <li><a href="http://google.com">Animals</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-</article>
+    </article>
 
 </body>
 </html>
