@@ -19,19 +19,21 @@ header h2 {
     line-height: 1.5em;
 }
 header div {
-    -webkit-flex: 1;
-    flex: 1;
+    -webkit-flex: 3;
+    flex: 3;
 
     display: -webkit-flex;
     display: flex;
-    -webkit-justify-content: space-around;
-    justify-content: space-around;
-    -webkit-align-items: stretch;
-    align-items: stretch;
+
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    -webkit-align-items: center;
+    align-items: center;
 }
 header div.search {
-    -webkit-flex: 3;
-    flex: 3;
+    -webkit-flex: 14;
+    flex: 14;
 }
 header img {
     height: 2em;
@@ -69,7 +71,7 @@ article .tag-list {
 
 
 .search input {
-    width: 80%;
+    width: 100%;
     background: #eee url(../img/search.png) no-repeat scroll;
     background-position: 98% 45%;
     background-size: 16px 16px;
@@ -118,7 +120,7 @@ input[type=text]:focus {
     box-shadow: 0px 2px 0px 0px hsl(44, 30%, 70%);
 
     height: 4em;
-    width: 95%;
+    width: 99.5%;
 
     display: -webkit-flex;
     display: flex;
@@ -259,7 +261,7 @@ input[type=text]:focus {
     border-bottom-right-radius: 5px;
 
     margin-bottom: 2em;
-    width: 80%;
+    width: 87%;
 }
 .answer > .vote {
     -webkit-flex: 1;
