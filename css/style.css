@@ -169,13 +169,6 @@ input[type=text]:focus {
     background: url(../img/arrow-default.png) no-repeat scroll;
     background-size: 23px 23px;
     background-position: 80% 45%;
-    margin: 0 0 .5em 0;
-}
-.question button.downvote {
-    background: url(../img/arrow-default.png) no-repeat scroll;
-    background-size: 23px 23px;
-    background-position: 80% 45%;
-    transform: scaleY(-1);
 }
 .question button.upvote:hover,
 .question button.downvote:hover {
@@ -263,7 +256,6 @@ input[type=text]:focus {
 
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    /*background-color: hsl(44, 30%, 70%);*/
 
     margin-bottom: 2em;
     width: 80%;
@@ -271,9 +263,6 @@ input[type=text]:focus {
 .answer > .vote {
     -webkit-flex: 1;
     flex: 1;
-
-    -webkit-align-items: center;
-    align-items: center;
 }
 .answer > .score {
     -webkit-flex: 1;
@@ -310,6 +299,12 @@ input[type=text]:focus {
 
     -webkit-flex-direction: column;
     flex-direction: column;
+
+    -webkit-align-items: center;
+    align-items: center;
+
+    -webkit-justify-content: center;
+    justify-content: center;
 }
 .answer button {
     border: none;
@@ -320,13 +315,13 @@ input[type=text]:focus {
 .answer button.upvote {
     background: url(../img/arrow-default.png) no-repeat scroll;
     background-size: 23px 23px;
-    background-position: 80% 45%;
+    background-position: 50% 45%;
     margin: 0 0 .5em 0;
 }
 .answer button.downvote {
     background: url(../img/arrow-default.png) no-repeat scroll;
     background-size: 23px 23px;
-    background-position: 80% 45%;
+    background-position: 50% 45%;
     transform: scaleY(-1);
 }
 .answer button.upvote:hover,
