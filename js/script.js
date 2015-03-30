@@ -18,7 +18,7 @@ function initialDataLoad()
 	for(var i = 0; i < questions.length; i++)
     {
 		var currentQuestion = questions[i];
-		var currentQuestionID = currentQuestion.ID;
+		var currentQuestionID = "q" + currentQuestion.ID;
 		var questionDiv = document.createElement('div');
 		questionDiv.className = "question";
         questionDiv.id = currentQuestionID;
@@ -97,6 +97,19 @@ function upvote(targetEl)
             var previous = parseInt(targetChildNodes[i].innerHTML);
             previous++;
             targetChildNodes[i].innerHTML = previous;
+
+	        var elements;
+            if (targetEl.className === "question")
+            {
+                m.setQuestionScore(parseInt(targetEl.id.substring(1)),
+                                   previous);
+            }
+            else if (targetEl.className === "answer")
+            {
+                m.setAnswerScore(parseInt(targetEl.id.substring(1)),
+                                 previous);
+            }
+
             break;
         }
     }
@@ -130,7 +143,7 @@ function openQuestion(questionEl)
 {
     console.log("in openQuestion");
 
-    var questionId = questionEl.id;
+    var questionId = parseInt(questionEl.id.substring(1));
 
     var articleElement = document.getElementsByTagName("article")[0];
     while (document.getElementsByClassName("answer-list").length > 0)
@@ -146,10 +159,12 @@ function openQuestion(questionEl)
 	for(var j = 0; j < answers.length; j++)
     {
 		var currentAnswer = answers[j];
-		var currentScore = currentAnswer.upvotes - currentAnswer.downvotes;
+		var currentScore = currentAnswer.upvotes;
+        var answerId = "a" + currentAnswer.ID;
 
         var newAnswer = document.createElement("div");
             newAnswer.className = "answer";
+            newAnswer.id = answerId;
         
         var voteEl = document.createElement("div");
             voteEl.className = "vote";

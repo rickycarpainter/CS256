@@ -15,7 +15,6 @@ function answer(ID, userID, questionID, content){
 		this.content = content;
 		this.dateSubmitted = new Date();
 		this.upvotes = 0;
-		this.downvotes = 0;
 }
 
 //Manierre
@@ -67,7 +66,7 @@ function loadModelDummyData(model){
 		
 		// ID, USERID, questionID
 		var answer1 = new answer(0,2,0,"Hahahaha!  You are so dumb!  I learned that in middle school!");
-		answer1.downvotes = 10;
+		answer1.upvotes = -10;
 		model.allAnswers.push(answer1);
 		var answer2 = new answer(1,3,0,"Don't listen to him, he's a jerk.  This is what Photosynthesis is...");
 		answer2.upvotes = 30;
@@ -80,10 +79,10 @@ function loadModelDummyData(model){
 		model.allAnswers.push(answer4);
 		var answer5 = new answer(4,3,3,"I am Captain Kangaroo, and I approve this message.");
 		model.allAnswers.push(answer5);
-		var answer5 = new answer(4,3,4,"Yes.  This is because you are awesome.");
+		var answer5 = new answer(5,3,4,"Yes.  This is because you are awesome.");
 		model.allAnswers.push(answer5);
 		answer5.upvotes = 4;
-		var answer6 = new answer(4,3,1,"Mitochondria party it up with the Krebs Cycle");
+		var answer6 = new answer(6,3,1,"Mitochondria party it up with the Krebs Cycle");
 		answer6.upvotes = 5;
 		model.allAnswers.push(answer6);
 		
@@ -138,6 +137,23 @@ function model(){
 		}
 		return result;
 	};
+
+    this.setQuestionScore = function(questionId, newScore)
+        {
+            for (var i = 0; i < this.allQuestions.length; i++)
+            {
+                if (this.allQuestions[i].ID === questionId)
+                    this.allQuestions[i].upvotes = newScore;
+            }
+        };
+    this.setAnswerScore = function(answerId, newScore)
+        {
+            for (var i = 0; i < this.allAnswers.length; i++)
+            {
+                if (this.allAnswers[i].ID === answerId)
+                    this.allAnswers[i].upvotes = newScore;
+            }
+        };
 	
 	this.getQuestionsForUser = function(userID){
 		var result = [];
