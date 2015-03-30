@@ -70,16 +70,21 @@ function loadModelDummyData(model){
 		answer1.downvotes = 10;
 		model.allAnswers.push(answer1);
 		var answer2 = new answer(1,3,0,"Don't listen to him, he's a jerk.  This is what Photosynthesis is...");
+		answer2.upvotes = 30;
 		model.allAnswers.push(answer2);
 		var answer3 = new answer(2,2,0,"Are you sure that's what the answer is?  Huh?  You betta' recognize!");
 		model.allAnswers.push(answer3);
 		var answer4 = new answer(3,3,2,"The differences are that 1.  blah 2. blah and 3. blah");
+		answer3.upvotes = 21;
+		answer4.upvotes = 25;
 		model.allAnswers.push(answer4);
 		var answer5 = new answer(4,3,3,"I am Captain Kangaroo, and I approve this message.");
 		model.allAnswers.push(answer5);
 		var answer5 = new answer(4,3,4,"Yes.  This is because you are awesome.");
 		model.allAnswers.push(answer5);
+		answer5.upvotes = 4;
 		var answer6 = new answer(4,3,1,"Mitochondria party it up with the Krebs Cycle");
+		answer6.upvotes = 5;
 		model.allAnswers.push(answer6);
 		
 }
