@@ -259,6 +259,23 @@ input[type=text]:focus {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     background-color: hsl(44, 30%, 70%);
+
+    margin-bottom: 2em;
+}
+.answer > .vote {
+    -webkit-flex: 1;
+    flex: 1;
+
+    -webkit-align-items: center;
+    align-items: center;
+}
+.answer > .score {
+    -webkit-flex: 1;
+    flex: 1;
+}
+.answer > .text {
+    -webkit-flex: 7;
+    flex: 7;
 }
 
 .answer-list .answer {
@@ -280,15 +297,7 @@ input[type=text]:focus {
     cursor: pointer;
     background-color: #fff;
 }
-.answer > .vote {
-    -webkit-flex: 1;
-    flex: 1;
-}
 
-.answer > .text {
-    -webkit-flex: 7;
-    flex: 7;
-}
 .answer .vote {
     display: -webkit-flex;
     display: flex;
