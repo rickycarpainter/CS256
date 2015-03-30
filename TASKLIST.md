@@ -12,6 +12,6 @@ Ordered by priority, highest at the top. Finished tasks move to bottom
  - [x] style answers
 
 ## Javascript
- - [ ] fix arrow click so that it changes the vote count
+ - [x] fix arrow click so that it changes the vote count
  - [ ] reorder questions/answers when score changes
  - [ ] search?

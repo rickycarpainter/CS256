@@ -167,7 +167,7 @@ input[type=text]:focus {
 }
 .question button.upvote {
     background: url(../img/arrow-default.png) no-repeat scroll;
-    background-size: 23px 23px;
+    background-size: 24px 24px;
     background-position: 80% 45%;
 }
 .question button.upvote:hover,
@@ -314,13 +314,13 @@ input[type=text]:focus {
 }
 .answer button.upvote {
     background: url(../img/arrow-default.png) no-repeat scroll;
-    background-size: 23px 23px;
+    background-size: 24px 24px;
     background-position: 50% 45%;
     margin: 0 0 .5em 0;
 }
 .answer button.downvote {
     background: url(../img/arrow-default.png) no-repeat scroll;
-    background-size: 23px 23px;
+    background-size: 24px 24px;
     background-position: 50% 45%;
     transform: scaleY(-1);
 }

@@ -35,21 +35,95 @@ function initialDataLoad()
                 openQuestion(questionEl)
             };
 
-		var questionHTML = "";
-		questionHTML += "<div class='vote'>\n";
-        // TODO fix voting
-		//questionHTML += "<button type='button' onclick='setQuestion("+currentQuestion.ID+")' class='upvote'></button>\n";
-		questionHTML += "<button type='button' class='upvote'></button>\n";
-		questionHTML += "</div>\n";
-		questionHTML += "<div class='score'>"+currentQuestion.upvotes+"</div>\n";
-		questionHTML += "<div class='text'>"+currentQuestion.title+"</div>\n";
-		questionHTML += "<div class='answers'>"+m.getQuestionAnswers(currentQuestion.ID).length+"<div>answers</div></div>\n";
-		questionDiv.innerHTML =  questionHTML;
+        var voteDiv = document.createElement('div');
+        voteDiv.className = "vote";
 
+        var upvoteBtn = document.createElement('button');
+        upvoteBtn.type = "button";
+        upvoteBtn.className = "upvote";
+        upvoteBtn.onclick = function(event)
+            {
+                event.stopPropagation();
+                var el = event.target;
+                while (el.className !== "upvote")
+                {
+                    if (el.tagName === "article")
+                        return;
+                    el = el.parentNode;
+                }
+                upvote(el);
+            };
+        voteDiv.appendChild(upvoteBtn);
+
+        questionDiv.appendChild(voteDiv);
+
+        var scoreDiv = document.createElement('div');
+        scoreDiv.className = "score";
+        scoreDiv.innerHTML = currentQuestion.upvotes;
+        questionDiv.appendChild(scoreDiv);
+
+        var textDiv = document.createElement('div');
+        textDiv.className = "text";
+        textDiv.innerHTML = currentQuestion.title;
+        questionDiv.appendChild(textDiv);
+
+        var answersDiv = document.createElement('div');
+        answersDiv.className = "answers";
+        answersDiv.innerHTML = m.getQuestionAnswers(currentQuestion.ID).length+"<div>answers</div>";
+        questionDiv.appendChild(answersDiv);
+        
 		questionList.appendChild(questionDiv);
 
         console.log("added a new question to questionList");
 	}
+}
+
+function upvote(targetEl)
+{
+    console.log("in upvote from " + targetEl.outerHTML);
+
+    while (targetEl.className !== "question" && targetEl.className !== "answer")
+    {
+        if (targetEl.className === "article")
+            return;
+        targetEl = targetEl.parentNode;
+    }
+
+    var targetChildNodes = targetEl.childNodes;
+    for (var i = 0; i < targetChildNodes.length; i++)
+    {
+        if (targetChildNodes[i].className === "score")
+        {
+            var previous = parseInt(targetChildNodes[i].innerHTML);
+            previous++;
+            targetChildNodes[i].innerHTML = previous;
+            break;
+        }
+    }
+}
+
+function downvote(targetEl)
+{
+    console.log("in downvote from " + targetEl.outerHTML);
+
+    while (targetEl.className !== "question" && targetEl.className !== "answer")
+    {
+        if (targetEl.className === "article")
+            return;
+        targetEl = targetEl.parentNode;
+    }
+
+    var targetChildNodes = targetEl.childNodes;
+    for (var i = 0; i < targetChildNodes.length; i++)
+    {
+        if (targetChildNodes[i].className === "score")
+        {
+            var previous = parseInt(targetChildNodes[i].innerHTML);
+            previous--;
+            targetChildNodes[i].innerHTML = previous;
+            break;
+        }
+    }
 }
 
 function openQuestion(questionEl)
@@ -68,20 +142,67 @@ function openQuestion(questionEl)
 	var answerListDiv = document.createElement('div');
 	answerListDiv.className = "answer-list";
 	var answers = m.getQuestionAnswers(questionId);
-	answerListDiv.innerHTML = '';
 	for(var j = 0; j < answers.length; j++)
     {
 		var currentAnswer = answers[j];
-		var answerHTML = "<div class='answer'>\n";
-		answerHTML += "<div class='vote'>\n";
-		answerHTML += "<button class='upvote'></button>\n";
-		answerHTML += "<button class='downvote'></button>\n";
-		answerHTML += "</div>\n";
 		var currentScore = currentAnswer.upvotes - currentAnswer.downvotes;
-		answerHTML += "<div class='score'>"+currentScore+"</div>\n";
-		answerHTML += "<div class='text'>"+currentAnswer.content+"</div>\n";
-		answerHTML += "</div>\n";
-		answerListDiv.innerHTML += answerHTML;
+
+        var newAnswer = document.createElement("div");
+        newAnswer.className = "answer";
+        
+        var voteEl = document.createElement("div");
+        voteEl.className = "vote";
+
+        var upvoteEl = document.createElement("button");
+        upvoteEl.type = "button";
+        upvoteEl.className = "upvote";
+        upvoteEl.onclick = function(event)
+            {
+                event.stopPropagation();
+                var el = event.target;
+                console.log(el.outerHTML);
+                while (el.className !== "upvote")
+                {
+                    if (el.tagName === "article")
+                        return;
+                    el = el.parentNode;
+                }
+                console.log(el.outerHTML);
+                upvote(el);
+            };
+
+        var downvoteEl = document.createElement("button");
+        downvoteEl.type = "button";
+        downvoteEl.className = "downvote";
+        downvoteEl.onclick = function(event)
+            {
+                event.stopPropagation();
+                var el = event.target;
+                while (el.className !== "downvote")
+                {
+                    if (el.tagName === "article")
+                        return;
+                    el = el.parentNode;
+                }
+                downvote(el);
+            };
+
+        var scoreEl = document.createElement("div");
+        scoreEl.className = "score";
+        scoreEl.innerHTML = currentScore;
+
+        var textEl = document.createElement("div");
+        textEl.className = "text";
+        textEl.innerHTML = currentAnswer.content;
+
+        voteEl.appendChild(upvoteEl);
+        voteEl.appendChild(downvoteEl);
+
+        newAnswer.appendChild(voteEl);
+        newAnswer.appendChild(scoreEl);
+        newAnswer.appendChild(textEl);
+
+        answerListDiv.appendChild(newAnswer);
 	}
     questionEl.insertAdjacentHTML('afterend', answerListDiv.outerHTML);
 
