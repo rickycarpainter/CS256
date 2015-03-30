@@ -141,6 +141,7 @@ function openQuestion(questionEl)
 
 	var answerListDiv = document.createElement('div');
 	answerListDiv.className = "answer-list";
+    console.log("created answer list: " + answerListDiv.outerHTML);
 	var answers = m.getQuestionAnswers(questionId);
 	for(var j = 0; j < answers.length; j++)
     {
@@ -148,52 +149,53 @@ function openQuestion(questionEl)
 		var currentScore = currentAnswer.upvotes - currentAnswer.downvotes;
 
         var newAnswer = document.createElement("div");
-        newAnswer.className = "answer";
+            newAnswer.className = "answer";
         
         var voteEl = document.createElement("div");
-        voteEl.className = "vote";
+            voteEl.className = "vote";
 
         var upvoteEl = document.createElement("button");
-        upvoteEl.type = "button";
-        upvoteEl.className = "upvote";
-        upvoteEl.onclick = function(event)
-            {
-                event.stopPropagation();
-                var el = event.target;
-                console.log(el.outerHTML);
-                while (el.className !== "upvote")
+            upvoteEl.type = "button";
+            upvoteEl.className = "upvote";
+            upvoteEl.onclick = function(event)
                 {
-                    if (el.tagName === "article")
-                        return;
-                    el = el.parentNode;
-                }
-                console.log(el.outerHTML);
-                upvote(el);
-            };
+                    event.stopPropagation();
+                    var el = event.target;
+                    console.log(el.outerHTML);
+                    while (el.className !== "upvote")
+                    {
+                        if (el.tagName === "article")
+                            return;
+                        el = el.parentNode;
+                    }
+                    console.log(el.outerHTML);
+                    upvote(el);
+                };
+        console.log("created upvote btn: " + upvoteEl.outerHTML);
 
         var downvoteEl = document.createElement("button");
-        downvoteEl.type = "button";
-        downvoteEl.className = "downvote";
-        downvoteEl.onclick = function(event)
-            {
-                event.stopPropagation();
-                var el = event.target;
-                while (el.className !== "downvote")
+            downvoteEl.type = "button";
+            downvoteEl.className = "downvote";
+            downvoteEl.onclick = function(event)
                 {
-                    if (el.tagName === "article")
-                        return;
-                    el = el.parentNode;
-                }
-                downvote(el);
-            };
+                    event.stopPropagation();
+                    var el = event.target;
+                    while (el.className !== "downvote")
+                    {
+                        if (el.tagName === "article")
+                            return;
+                        el = el.parentNode;
+                    }
+                    downvote(el);
+                };
 
         var scoreEl = document.createElement("div");
-        scoreEl.className = "score";
-        scoreEl.innerHTML = currentScore;
+            scoreEl.className = "score";
+            scoreEl.innerHTML = currentScore;
 
         var textEl = document.createElement("div");
-        textEl.className = "text";
-        textEl.innerHTML = currentAnswer.content;
+            textEl.className = "text";
+            textEl.innerHTML = currentAnswer.content;
 
         voteEl.appendChild(upvoteEl);
         voteEl.appendChild(downvoteEl);
@@ -204,7 +206,7 @@ function openQuestion(questionEl)
 
         answerListDiv.appendChild(newAnswer);
 	}
-    questionEl.insertAdjacentHTML('afterend', answerListDiv.outerHTML);
+    questionEl.parentNode.insertBefore(answerListDiv, questionEl.nextSibling);
 
     console.log("added new answerList to questionList");
 }

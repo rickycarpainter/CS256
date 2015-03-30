@@ -340,3 +340,6 @@ input[type=text]:focus {
     display: -webkit-flex;
     display: flex;
 }
+.answer .text {
+    padding-right: .3em;
+}
