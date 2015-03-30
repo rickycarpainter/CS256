@@ -12,8 +12,6 @@ Ordered by priority, highest at the top. Finished tasks move to bottom
  - [x] style answers
 
 ## Javascript
- - [ ] fix arrow click so that it changes the vote count&mdash;
-currently hides or unhides answer list
- - [ ] fix hide/unhide answer list&mdash;should show when clicking
- the question anywhere except the vote arrows
+ - [ ] fix arrow click so that it changes the vote count
+ - [ ] reorder questions/answers when score changes
  - [ ] search?
