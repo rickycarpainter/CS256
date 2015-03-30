@@ -5,6 +5,7 @@ Ordered by priority, highest at the top. Finished tasks move to bottom
 ## HTML
  - [ ] add Ask New button
  - [ ] add Follow and Answer button
+ - [ ] add pictures! :)
  - [ ] add Sort By button and box of options
  - [ ] change width on click to show the rest of question
  - [ ] add input boxes for typing new answers and questions
