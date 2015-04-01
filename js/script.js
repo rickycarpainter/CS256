@@ -5,11 +5,11 @@ function initializeVariables()
 //	loadModelDummyData(m);
 }
 
-function initialDataLoad()
+function initialDataLoad(searchValue)
 {
     console.log("in init data load");
 
-	var questions = m.getQuestions("","");
+	var questions = m.getQuestions("",searchValue);
 	var questionList = document.getElementsByClassName('question-list')[0];
 	while (questionList.firstChild)
     {
@@ -232,9 +232,16 @@ function openQuestion(questionEl)
     console.log("added new answerList to questionList");
 }
 
-
 window.addEventListener("DOMContentLoaded", function() {
 	console.log("DOM loaded");
 	initializeVariables();
-    initialDataLoad();
+    initialDataLoad(" ");
+	
+	var input = document.getElementById('searchBox');
+    input.onkeypress = function () {
+		var value = document.getElementById('searchBox').value;
+		//alert(value);
+        initialDataLoad(value);
+    };
+	
 }, false);
