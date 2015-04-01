@@ -9,10 +9,10 @@ body {
 header {
     background-color: #566b24;
     color: #eee;
-    padding: .75em 0;
     box-shadow: 0 0 3px 4px hsl(44, 30%, 55%);
     display: -webkit-flex;
     display: flex;
+    height: 4em;
 }
 header h2 {
     margin: 0;
@@ -38,11 +38,8 @@ header div.search {
 header img {
     height: 2em;
 }
-header .title {
-    text-transform: uppercase;
-    background: url(../img/leaf.svg) no-repeat scroll;
-    background-size: 36px 36px;
-    background-position: 80% 45%;
+header .title img {
+    height: 4em;
 }
 
 

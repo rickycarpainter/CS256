@@ -6,6 +6,9 @@ function question(ID, userID, title, content){
 		this.dateSubmitted = new Date();
 		this.upvotes = 0;
 		this.followed = false;
+        this.profile = "user"+
+                (Math.floor(Math.random()*(9-1))+1)+
+                ".jpg";
 }
 
 function answer(ID, userID, questionID, content){
@@ -15,6 +18,9 @@ function answer(ID, userID, questionID, content){
 		this.content = content;
 		this.dateSubmitted = new Date();
 		this.upvotes = 0;
+        this.profile = "user"+
+                (Math.floor(Math.random()*(9-1))+1)+
+                ".jpg";
 }
 
 //Manierre

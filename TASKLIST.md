@@ -15,8 +15,9 @@ Ordered by priority, highest at the top. Finished tasks move to bottom
  - [x] add pictures! :)
 
 ## Javascript
- - [ ] reorder questions/answers when score changes
- - [ ] search?
+ - [ ] load questions and answers ordered
+ - [ ] sort by
+ - [x] search
  - [x] fix arrow click so that it changes the vote count
 
 ## From critique

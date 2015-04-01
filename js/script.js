@@ -62,8 +62,10 @@ function initialDataLoad(searchValue)
 
         var profileDiv = document.createElement('div');
         profileDiv.className = "profile";
-        profileDiv.innerHTML = "<img src='img/user" + 
-                (Math.floor(Math.random()*(9-1))+1) + ".jpg'>";
+        //profileDiv.innerHTML = "<img src='img/user" + 
+                //(Math.floor(Math.random()*(9-1))+1) + ".jpg'>";
+        profileDiv.innerHTML = "<img src='img/"+
+                currentQuestion.profile+"'>";
         questionDiv.appendChild(profileDiv);
 
         var textDiv = document.createElement('div');
@@ -214,8 +216,10 @@ function openQuestion(questionEl)
         
         var profileEl = document.createElement("div");
             profileEl.className = "profile";
-            profileEl.innerHTML = "<img src='img/user" + 
-                (Math.floor(Math.random()*(9-1))+1) + ".jpg'>";
+            //profileEl.innerHTML = "<img src='img/user" + 
+                //(Math.floor(Math.random()*(9-1))+1) + ".jpg'>";
+            profileEl.innerHTML = "<img src='img/"+
+                currentAnswer.profile+"'>";
 
 
         var textEl = document.createElement("div");
