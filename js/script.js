@@ -245,10 +245,10 @@ window.addEventListener("DOMContentLoaded", function() {
     initialDataLoad(" ");
 	
 	var input = document.getElementById('searchBox');
-    input.onkeypress = function () {
+    input.onkeydown = function () {
 		var value = document.getElementById('searchBox').value;
 		//alert(value);
-        initialDataLoad(value);
+        initialDataLoad(value.toLowerCase());
     };
 	
 }, false);
