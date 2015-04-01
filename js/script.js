@@ -64,8 +64,8 @@ function initialDataLoad()
 
         var profileDiv = document.createElement('div');
         profileDiv.className = "profile";
-        profileDiv.innerHTML = "<img src='user" + 
-                (Math.random() * (10-1) + 1) + ".jpg'>";
+        profileDiv.innerHTML = "<img src='img/user" + 
+                (Math.floor(Math.random()*(9-1))+1) + ".jpg'>";
         questionDiv.appendChild(profileDiv);
 
         var textDiv = document.createElement('div');
