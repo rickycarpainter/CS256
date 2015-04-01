@@ -1,8 +1,6 @@
 function initializeVariables()
 {
 	this.currentSelectedQuestion = -1;
-//	var m = new model();
-//	loadModelDummyData(m);
 }
 
 function initialDataLoad(searchValue)
