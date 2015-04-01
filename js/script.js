@@ -62,6 +62,12 @@ function initialDataLoad()
         scoreDiv.innerHTML = currentQuestion.upvotes;
         questionDiv.appendChild(scoreDiv);
 
+        var profileDiv = document.createElement('div');
+        profileDiv.className = "profile";
+        profileDiv.innerHTML = "<img src='user" + 
+                (Math.random() * (10-1) + 1) + ".jpg'>";
+        questionDiv.appendChild(profileDiv);
+
         var textDiv = document.createElement('div');
         textDiv.className = "text";
         textDiv.innerHTML = currentQuestion.title;
