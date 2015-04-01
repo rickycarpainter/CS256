@@ -93,7 +93,7 @@ function model(){
 	this.allAnswers = [];
 	this.allUsers = [];
 	
-	this.getQuestions = function(sortOrder){
+	this.getQuestions = function(sortOrder,searchValue){
 		if(sortOrder === "Upvotes"){
 			this.allQuestions.sort(function(a,b){
 				if(a.upvotes < b.upvotes){
@@ -125,7 +125,14 @@ function model(){
 				return 0;
 			});
 		}
-		return this.allQuestions;
+		var result = [];
+		for(var i = 0; i < this.allQuestions.length; i++){
+			var currentQuestion = this.allQuestions[i];
+			if (currentQuestion.title.toLowerCase().indexOf(searchValue) > -1){
+				result.push(currentQuestion);
+			}
+		}
+		return result;
 	};
 	
 	this.getQuestionAnswers = function(questionID){
@@ -193,6 +200,7 @@ function model(){
 	}
 }
 
+
 var currentUser = 3;
 var m = new model();
 loadModelDummyData(m);
@@ -200,11 +208,12 @@ var answersForQuestion1 = m.getQuestionAnswers(0);
 var answersForQuestion2 = m.getQuestionAnswers(2);
 var answersForQuestion3 = m.getQuestionAnswers(3);
 var answersForQuestion4 = m.getQuestionAnswers(1);
-var stuff = m.getQuestions("Upvotes");
-var stuff = m.getQuestions("Date Submitted");
+//var stuff = m.getQuestions("Upvotes");
+//var stuff = m.getQuestions("Date Submitted");
 var user2questions = m.getQuestionsForUser(1);
 var user1questions = m.getQuestionsForUser(0);
 var user3answers = m.getAnswersForUser(3);
 console.log("gets here");
+
 
 

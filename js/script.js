@@ -1,15 +1,15 @@
 function initializeVariables()
 {
 	this.currentSelectedQuestion = -1;
-	var m = new model();
-	loadModelDummyData(m);
+//	var m = new model();
+//	loadModelDummyData(m);
 }
 
 function initialDataLoad()
 {
     console.log("in init data load");
 
-	var questions = m.getQuestions("");
+	var questions = m.getQuestions("","");
 	var questionList = document.getElementsByClassName('question-list')[0];
 	while (questionList.firstChild)
     {
