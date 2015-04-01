@@ -213,6 +213,12 @@ function openQuestion(questionEl)
         var scoreEl = document.createElement("div");
             scoreEl.className = "score";
             scoreEl.innerHTML = currentScore;
+        
+        var profileEl = document.createElement("div");
+            profileEl.className = "profile";
+            profileEl.innerHTML = "<img src='img/user" + 
+                (Math.floor(Math.random()*(9-1))+1) + ".jpg'>";
+
 
         var textEl = document.createElement("div");
             textEl.className = "text";
@@ -223,6 +229,7 @@ function openQuestion(questionEl)
 
         newAnswer.appendChild(voteEl);
         newAnswer.appendChild(scoreEl);
+        newAnswer.appendChild(profileEl);
         newAnswer.appendChild(textEl);
 
         answerListDiv.appendChild(newAnswer);
