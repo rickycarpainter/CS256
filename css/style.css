@@ -135,18 +135,19 @@ input[type=text]:focus {
     cursor: pointer;
     background-color: #fff;
 }
-.question > .vote {
-    -webkit-flex: 1;
+.question > .score {
+    -webkit-flex: 1:
     flex: 1;
 }
-.question > .score,
+.quesiton > .profile,
+.question > .vote,
 .question > .answers {
-    -webkit-flex: 1;
-    flex: 1;
+    -webkit-flex: 2;
+    flex: 2;
 }
 .question > .text {
-    -webkit-flex: 7;
-    flex: 7;
+    -webkit-flex: 8;
+    flex: 8;
 }
 .question .vote {
     display: -webkit-flex;
