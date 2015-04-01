@@ -135,19 +135,16 @@ input[type=text]:focus {
     cursor: pointer;
     background-color: #fff;
 }
-.question > .score {
-    -webkit-flex: 1:
-    flex: 1;
-}
-.quesiton > .profile,
+.question > .score,
+.question > .profile,
 .question > .vote,
 .question > .answers {
-    -webkit-flex: 2;
-    flex: 2;
+    -webkit-flex: 1;
+    flex: 1;
 }
 .question > .text {
-    -webkit-flex: 8;
-    flex: 8;
+    -webkit-flex: 7;
+    flex: 7;
 }
 .question .vote {
     display: -webkit-flex;
@@ -196,6 +193,16 @@ input[type=text]:focus {
 
     -webkit-align-items: stretch;
     align-items: stretch;
+}
+.question .profile {
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-align-items: center;
+    align-items: center;
+
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
 }
 .question .answers {
     text-align: center;
@@ -264,10 +271,8 @@ input[type=text]:focus {
     margin-bottom: 2em;
     width: 87%;
 }
-.answer > .vote {
-    -webkit-flex: 1;
-    flex: 1;
-}
+.answer > .profile,
+.answer > .vote,
 .answer > .score {
     -webkit-flex: 1;
     flex: 1;
@@ -345,6 +350,23 @@ input[type=text]:focus {
     display: -webkit-flex;
     display: flex;
 }
+.question .profile {
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-align-items: center;
+    align-items: center;
+
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
 .answer .text {
     padding-right: .3em;
+}
+
+
+
+.profile img {
+    max-width: 70%;
+    max-height: 70%;
 }
