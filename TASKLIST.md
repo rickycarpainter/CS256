@@ -17,12 +17,13 @@ Ordered by priority, highest at the top. Finished tasks move to bottom
 ## Javascript
  - [ ] load questions and answers ordered
  - [ ] sort by
+ - [ ] fix search so it isn&rsquo;t one keystroke behind
  - [x] search
  - [x] fix arrow click so that it changes the vote count
 
 ## From critique
- - [ ] needs more color/green in bottom area
- - [ ] number of answers and "answers" are too close together
- - [ ] leaf could be bigger or something
  - [ ] transitions instead of jump loading of new answers?
+ - [x] needs more color/green in bottom area
+ - [x] number of answers and &ldquo;answers&rdquo; are too close together
+ - [x] leaf could be bigger or something
  - [x] align search bar
