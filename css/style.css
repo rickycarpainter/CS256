@@ -361,7 +361,7 @@ input[type=text]:focus {
     justify-content: flex-start;
 }
 .answer .text {
-    padding-right: .3em;
+    padding-right: .5em;
 }
 
 

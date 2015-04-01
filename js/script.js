@@ -75,7 +75,7 @@ function initialDataLoad(searchValue)
 
         var answersDiv = document.createElement('div');
         answersDiv.className = "answers";
-        answersDiv.innerHTML = m.getQuestionAnswers(currentQuestion.ID).length+"<div>answers</div>";
+        answersDiv.innerHTML = m.getQuestionAnswers(currentQuestion.ID).length+"<div>&nbsp;&nbsp;ans.</div>";
         questionDiv.appendChild(answersDiv);
         
 		questionList.appendChild(questionDiv);
