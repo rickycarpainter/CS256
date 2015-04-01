@@ -245,6 +245,11 @@ window.addEventListener("DOMContentLoaded", function() {
     initialDataLoad(" ");
 	
 	var input = document.getElementById('searchBox');
+	
+	window.onkeydown = function(){
+		input.focus();
+	}
+	
     input.onkeydown = function () {
 		var value = document.getElementById('searchBox').value;
 		//alert(value);
