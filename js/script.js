@@ -9,15 +9,11 @@ function initialDataLoad(searchValue)
 
 	var questions = m.getQuestions("",searchValue);
 	var questionList = document.getElementsByClassName('question-list')[0];
-    var questionElements = document.querySelectorAll('.question-list .question');
-	while (questionList.firstChild)
-    {
-		questionList.removeChild(questionList.firstChild);
-	}
-    /*while (questionElements[0])
+    var questionElements = questionList.getElementsByClassName('question');
+    while (questionElements[0])
     {
         questionElements[0].parentNode.removeChild(questionElements[0]);
-    }*/
+    }
 	for(var i = 0; i < questions.length; i++)
     {
 		var currentQuestion = questions[i];
@@ -257,8 +253,10 @@ window.addEventListener("DOMContentLoaded", function()
 	
 	window.onkeydown = function()
     {
-        if (document.activeElement.tagName !== 'input' &&
-            document.activeElement.tagName !== 'textarea')
+        console.log('key down, active element: ' + 
+                document.activeElement.tagName);
+        if (document.activeElement.tagName !== 'INPUT' &&
+            document.activeElement.tagName !== 'TEXTAREA')
         {
             input.focus();
         }
