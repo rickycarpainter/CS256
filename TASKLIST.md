@@ -16,10 +16,10 @@ Ordered by priority, highest at the top. Finished tasks move to bottom
 ## Javascript
  - [ ] load questions and answers ordered
  - [ ] sort by
- - [ ] fix search so it isn&rsquo;t one keystroke behind
  - [ ] viewcount
  - [x] search
  - [x] fix arrow click so that it changes the vote count
+ - [x] fix search so it isn&rsquo;t one keystroke behind
 
 ## From critique
  - [ ] transitions instead of jump loading of new answers? this is easy in

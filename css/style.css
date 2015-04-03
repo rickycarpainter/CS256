@@ -111,15 +111,17 @@ input[type=text]:focus {
 
     margin-right: .8em;
 }
+.question-list > div#ask,
+.question-list > div.question {
+    height: auto;
+    width: 99.5%;
+    border-radius: .2em;
+    margin: 0 2px 2px 2px;
+}
 .question-list .question {
     background-color: rgba(249, 244, 229, 1);
-    margin: 0 .2em .2em .2em;
-    border-radius: .2em;
     box-shadow: 0px 2px 0px 0px hsl(44, 30%, 70%);
-
-    height: auto;
     min-height: 5em;
-    width: 99.5%;
 
     display: -webkit-flex;
     display: flex;
@@ -283,7 +285,7 @@ input[type=text]:focus {
 
 .answer-list .answer {
     background-color: rgba(249, 244, 229, 1);
-    margin: 0 .2em .2em .2em;
+    margin: 0 2px 2px 2px;
     border-radius: .2em;
     box-shadow: 0px 2px 0px 0px hsl(44, 30%, 70%);
 
@@ -369,4 +371,24 @@ input[type=text]:focus {
 .profile img {
     max-width: 80%;
     max-height: 80%;
+}
+
+
+#ask {
+    background-color: rgba(30,30,30,.3);
+    padding: 1.25em 0;
+    margin-bottom: 30px !important;
+}
+
+#ask textarea {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    background-color: rgba(240,240,240,.9);
+    border: none;
+    font-size: 1.5em;
+}
+#ask textarea:focus {
+    outline: none;
+    background-color: rgba(255,255,255,.9);
 }

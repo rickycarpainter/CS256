@@ -5,14 +5,19 @@ function initializeVariables()
 
 function initialDataLoad(searchValue)
 {
-    console.log("in init data load");
+    console.log("in init data load, search value: " + searchValue);
 
 	var questions = m.getQuestions("",searchValue);
 	var questionList = document.getElementsByClassName('question-list')[0];
+    var questionElements = document.querySelectorAll('.question-list .question');
 	while (questionList.firstChild)
     {
 		questionList.removeChild(questionList.firstChild);
 	}
+    /*while (questionElements[0])
+    {
+        questionElements[0].parentNode.removeChild(questionElements[0]);
+    }*/
 	for(var i = 0; i < questions.length; i++)
     {
 		var currentQuestion = questions[i];
@@ -62,8 +67,6 @@ function initialDataLoad(searchValue)
 
         var profileDiv = document.createElement('div');
         profileDiv.className = "profile";
-        //profileDiv.innerHTML = "<img src='img/user" + 
-                //(Math.floor(Math.random()*(9-1))+1) + ".jpg'>";
         profileDiv.innerHTML = "<img src='img/"+
                 currentQuestion.profile+"'>";
         questionDiv.appendChild(profileDiv);
@@ -216,8 +219,6 @@ function openQuestion(questionEl)
         
         var profileEl = document.createElement("div");
             profileEl.className = "profile";
-            //profileEl.innerHTML = "<img src='img/user" + 
-                //(Math.floor(Math.random()*(9-1))+1) + ".jpg'>";
             profileEl.innerHTML = "<img src='img/"+
                 currentAnswer.profile+"'>";
 
@@ -241,20 +242,32 @@ function openQuestion(questionEl)
     console.log("added new answerList to questionList");
 }
 
-window.addEventListener("DOMContentLoaded", function() {
+/*function search(param)
+{
+    console.log("param: " + param);
+}*/
+
+window.addEventListener("DOMContentLoaded", function()
+{
 	console.log("DOM loaded");
 	initializeVariables();
     initialDataLoad(" ");
 	
 	var input = document.getElementById('searchBox');
 	
-	window.onkeydown = function(){
-		input.focus();
-	}
+	window.onkeydown = function()
+    {
+        if (document.activeElement.tagName !== 'input' &&
+            document.activeElement.tagName !== 'textarea')
+        {
+            input.focus();
+        }
+	};
 	
-    input.onkeydown = function () {
-		var value = document.getElementById('searchBox').value;
-		//alert(value);
+    input.onkeyup = function(event)
+    {
+        event.stopPropagation();
+        var value = event.target.value;
         initialDataLoad(value.toLowerCase());
     };
 	
