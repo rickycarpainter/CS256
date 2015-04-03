@@ -3,7 +3,8 @@
 Ordered by priority, highest at the top. Finished tasks move to bottom
 
 ## HTML
- - [ ] add input boxes for typing new answers and questions
+ - [ ] style buttons in question input box (look at Ricky's last mockup)
+ - [ ] icons in first few buttons of question input box (look at Ricky's last mockup)
  - [ ] add Ask New button
  - [ ] add Follow and Answer button
  - [ ] add Sort By button and box of options
@@ -12,8 +13,10 @@ Ordered by priority, highest at the top. Finished tasks move to bottom
  - [ ] teacher outline
  - [x] style answers
  - [x] add pictures! :)
+ - [x] add input boxes for typing new answers and questions
 
 ## Javascript
+ - [ ] hide ask new question box (display: none;) and show on click Ask New
  - [ ] load questions and answers ordered
  - [ ] sort by
  - [ ] viewcount
@@ -25,6 +28,6 @@ Ordered by priority, highest at the top. Finished tasks move to bottom
  - [ ] transitions instead of jump loading of new answers? this is easy in
        JQuery and probably not nearly worth our time without it
  - [x] needs more color/green in bottom area
- - [x] number of answers and &ldquo;answers&rdquo; are too close together
+ - [x] number of answers and "answers" are too close together
  - [x] leaf could be bigger or something
  - [x] align search bar

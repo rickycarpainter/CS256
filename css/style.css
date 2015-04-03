@@ -381,8 +381,10 @@ input[type=text]:focus {
 }
 
 #ask textarea {
+    height: 7em;
     display: block;
     margin: 0 auto;
+    padding: 2px 5px;
     width: 90%;
     background-color: rgba(240,240,240,.9);
     border: none;
@@ -391,4 +393,23 @@ input[type=text]:focus {
 #ask textarea:focus {
     outline: none;
     background-color: rgba(255,255,255,.9);
+}
+
+#ask .buttons {
+    width: 320px;
+    margin: 10px auto 0;
+}
+#ask .buttons button {
+    height: 35px;
+    border: 0;
+}
+#ask .buttons button.input {
+    width: 35px;
+}
+
+
+button.submit {
+    background-color: #566b24;
+    color: #eee;
+    border: 0;
 }
