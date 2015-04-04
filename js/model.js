@@ -6,6 +6,7 @@ function question(ID, userID, title, content){
 		this.dateSubmitted = new Date();
 		this.upvotes = 0;
 		this.followed = false;
+		this.views = 1;
         this.profile = "user"+
                 (Math.floor(Math.random()*(9-1))+1)+
                 ".jpg";
@@ -143,6 +144,13 @@ function model(){
 	
 	this.getQuestionAnswers = function(questionID){
 		var result = [];
+		for (var i = 0; i < this.allQuestions.length; i++)
+        {
+            if (this.allQuestions[i].ID === questionID){
+                this.allQuestions[i].views += 1;
+				break;
+			}
+        }
 		for(var i = 0; i < this.allAnswers.length; i++){
 			if(this.allAnswers[i].questionID == questionID){
 				result.push(this.allAnswers[i]);
