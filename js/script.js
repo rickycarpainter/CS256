@@ -9,11 +9,18 @@ function initialDataLoad(searchValue)
 
 	var questions = m.getQuestions("",searchValue);
 	var questionList = document.getElementsByClassName('question-list')[0];
-    var questionElements = questionList.getElementsByClassName('question');
-    while (questionElements[0])
+
+    var elesToDelete = questionList.getElementsByClassName('question');
+    while (elesToDelete[0])
     {
-        questionElements[0].parentNode.removeChild(questionElements[0]);
+        elesToDelete[0].parentNode.removeChild(elesToDelete[0]);
     }
+    elesToDelete = questionList.getElementsByClassName('answer-list');
+    while (elesToDelete[0])
+    {
+        elesToDelete[0].parentNode.removeChild(elesToDelete[0]);
+    }
+
 	for(var i = 0; i < questions.length; i++)
     {
 		var currentQuestion = questions[i];
