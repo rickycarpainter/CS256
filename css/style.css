@@ -53,10 +53,10 @@ header div.settings {
 
     font-size: 1.25em;
     font-weight: bold;
-    color: hsla(44, 20%, 15%, .8);
+    color: hsla(44, 20%, 95%, .8);
 }
 header div.settings:hover {
-    color: hsla(44, 20%, 15%, 1);
+    color: hsla(44, 20%, 95%, 1);
     cursor: pointer;
 }
 header div.settings img {
