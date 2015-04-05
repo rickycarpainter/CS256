@@ -50,6 +50,17 @@ header div.settings {
 
     -webkit-justify-content: flex-end;
     justify-content: flex-end;
+
+    font-size: 1.25em;
+    font-weight: bold;
+    color: hsla(44, 20%, 15%, .8);
+}
+header div.settings:hover {
+    color: hsla(44, 20%, 15%, 1);
+    cursor: pointer;
+}
+header div.settings img {
+    margin: 0 5px 0 10px;
 }
 header div.spacer {
     -webkit-flex: 3;
