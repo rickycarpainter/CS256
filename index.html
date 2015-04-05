@@ -15,10 +15,14 @@
         <div class="settings">
             <img src="img/gear.png">
         </div>
+        <div class="spacer"></div>
     </header>
     <article>   
         <div id="questions" class="question-list">
             
+            <div id="ask-btn">
+                <button class="submit" onclick="showAsk()">Ask new</button>
+            </div>
             <div id="ask">
                 <textarea placeholder="Type a new question..."></textarea>
                 <div class="buttons">
@@ -27,7 +31,7 @@
                     <button class="input">p</button>
                     <button class="input">l</button>
                     <button>ask anonymously</button>
-                    <button class="submit">Ask</button>
+                    <button id="submit-new-q" class="submit">Ask</button>
                 </div>
             </div>
 

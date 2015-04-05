@@ -245,10 +245,16 @@ function openQuestion(questionEl)
     console.log("added new answerList to questionList");
 }
 
-/*function search(param)
-{
-    console.log("param: " + param);
-}*/
+function showAskBtn() {
+    document.getElementById('ask').style.display = 'none';
+    document.getElementById('ask-btn').style.display = 'block';
+}
+
+function showAsk() {
+    document.getElementById('ask-btn').style.display = 'none';
+    document.getElementById('ask').style.display = 'block';
+}
+
 
 window.addEventListener("DOMContentLoaded", function()
 {
@@ -272,8 +278,11 @@ window.addEventListener("DOMContentLoaded", function()
     input.onkeyup = function(event)
     {
         event.stopPropagation();
+        showAskBtn();
         var value = event.target.value;
         initialDataLoad(value.toLowerCase());
     };
+
+
 	
 }, false);
