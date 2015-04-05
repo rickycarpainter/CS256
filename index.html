@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <title>Bio 130 Q & A</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
@@ -12,7 +13,7 @@
     <header>
         <div class="title"><img src="img/logo.png"></div>
         <div class="search"><input id="searchBox" type="text" name="search"></div>
-        <div class="settings">
+        <div class="settings" onclick="settingsHandler()">
             George
             <img src="img/user5.jpg">
         </div>
@@ -32,7 +33,7 @@
                     <button class="input">p</button>
                     <button class="input">l</button>
                     <button>ask anonymously</button>
-                    <button id="submit-new-q" class="submit">Ask</button>
+                    <button id="submit-new-q" class="submit" onclick="submitNewQHandler()">Ask</button>
                 </div>
             </div>
 

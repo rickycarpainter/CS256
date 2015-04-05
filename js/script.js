@@ -255,6 +255,14 @@ function showAsk() {
     document.getElementById('ask').style.display = 'block';
 }
 
+function settingsHandler() {
+    alert("You clicked the settings button");
+}
+
+function submitNewQHandler() {
+    alert("You clicked the submit new question button");
+}
+
 
 window.addEventListener("DOMContentLoaded", function()
 {
