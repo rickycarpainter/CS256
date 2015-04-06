@@ -156,6 +156,7 @@ function model(){
 				result.push(this.allAnswers[i]);
 			}
 		}
+        result.sort(function(a,b) { return b.upvotes-a.upvotes; });
 		return result;
 	};
 

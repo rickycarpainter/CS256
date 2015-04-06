@@ -1,3 +1,5 @@
+var currentSortOrder = "Upvotes";
+
 function initializeVariables()
 {
 	this.currentSelectedQuestion = -1;
@@ -7,7 +9,7 @@ function initialDataLoad(searchValue)
 {
     console.log("in init data load, search value: " + searchValue);
 
-	var questions = m.getQuestions("",searchValue);
+	var questions = m.getQuestions(currentSortOrder,searchValue);
 	var questionList = document.getElementsByClassName('question-list')[0];
 
     var elesToDelete = questionList.getElementsByClassName('question');
