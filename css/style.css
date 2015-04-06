@@ -40,6 +40,8 @@ header div {
 header div.title {
     -webkit-flex: 3;
     flex: 3;
+
+    cursor: pointer;
 }
 header div.search {
     -webkit-flex: 11;

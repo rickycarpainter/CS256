@@ -276,8 +276,7 @@ function openQuestion(questionEl)
     var answerSubmitBtn = document.createElement('button');
         answerSubmitBtn.id = 'submit-new-a';
         answerSubmitBtn.className = 'submit';
-        //answerSubmitBtn.onclick = 'submitNewAHandler()';
-        answerSubmitBtn.setAttribute('onclick', 'submitNewAHandler()');
+        answerSubmitBtn.setAttribute('onclick', 'submitNewAHandler(this)');
         answerSubmitBtn.innerHTML = 'Answer';
     answerButtonsEl.appendChild(answerBoldBtn);
     answerButtonsEl.appendChild(answerPictureBtn);
@@ -300,6 +299,7 @@ function showAnswerBox()
 {
     document.getElementById('answer-q-btn').style.display = 'none';
     document.getElementById('answer-box').style.display = 'block';
+    document.getElementById('answer-box').getElementsByTagName('TEXTAREA')[0].focus();
 }
 
 function hideAnswerBox()
@@ -318,6 +318,7 @@ function showAsk()
 {
     document.getElementById('ask-btn').style.display = 'none';
     document.getElementById('ask').style.display = 'block';
+    document.getElementById('ask').getElementsByTagName('TEXTAREA')[0].focus();
 }
 
 function hideAsks()
@@ -326,23 +327,41 @@ function hideAsks()
     document.getElementById('ask').style.display = 'none';
 }
 
-function settingsHandler() {
+function settingsHandler()
+{
     alert("You clicked the settings button");
 }
 
-function submitNewQHandler() {
+function submitNewQHandler()
+{
     var title = document.getElementById('ask').getElementsByTagName('TEXTAREA')[0].value;
     m.submitQuestion('user5.jpg',title,title);    
     hideAsks();
+    clearSearchBar();
     currentSortOrder = "New Question";
     initialDataLoad('');
 }
 
-function submitNewAHandler() {
-    alert('Submit New A Handler');
-    //var title = document.getElementById('answer-box').getElementsByTagName('TEXTAREA')[0].value;
-    //hideAnswerBox();
-    //openQuestion();
+function submitNewAHandler(event)
+{
+    var questionEl = event.parentNode.parentNode.parentNode.previousSibling;
+    var qid = parseInt(questionEl.id.substring(1));
+    var title = document.getElementById('answer-box').getElementsByTagName('TEXTAREA')[0].value;
+    m.submitAnswer('user5.jpg',qid,title);
+    hideAnswerBox();
+    openQuestion(questionEl);
+}
+
+function homepage()
+{
+    currentSortOrder = 'Upvotes';
+    clearSearchBar();
+    initialDataLoad('');
+}
+
+function clearSearchBar()
+{
+    document.getElementById('searchBox').value = '';
 }
 
 

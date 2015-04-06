@@ -1,4 +1,4 @@
-function question(ID, userID, title, content){
+function question(ID, userID, title, content) {
 		this.ID = ID;
 		this.userID = userID;
 		this.title = title;
@@ -12,21 +12,8 @@ function question(ID, userID, title, content){
                 ".jpg";
 }
 
-/*function question(ID, userID, title, content, profilePicture)
-{
-		this.ID = ID;
-		this.userID = userID;
-		this.title = title;
-		this.content = content;
-		this.dateSubmitted = new Date();
-		this.upvotes = 0;
-		this.followed = false;
-		this.views = 1;
-        this.profile = profilePicture;
-}*/
 
-
-function answer(ID, userID, questionID, content){
+function answer(ID, userID, questionID, content) {
 		this.ID = ID;
 		this.userID = userID;
 		this.questionID = questionID;
@@ -220,7 +207,7 @@ function model(){
 	};
 	
 	
-	this.submitQuestion = function(profilePic, title, content){
+	this.submitQuestion = function(profilePic, title, content) {
 		var newquestion = new question(this.allQuestions.length,
                                     this.allUsers.length,
                                     title,
@@ -230,12 +217,12 @@ function model(){
         console.log("in submitQuestion, allQuestions.length: " + this.allQuestions.length);
 	}
 
-    /*
-	this.submitAnswer = function(userID, questionID, content){
-		var answer = new answer(userID, questionID, content);
-		this.allAnswers.push(answer);
+	this.submitAnswer = function(profilePic, qid, content) {
+        var userID = this.allUsers.length;
+        var answerID = this.allAnswers.length;
+		var newanswer = new answer(answerID, userID, qid, content);
+		this.allAnswers.push(newanswer);
 	}
-	*/
 	
 	this.getUser = function(userID){
 		var result = allUsers[userID];
