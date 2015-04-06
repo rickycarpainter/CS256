@@ -372,8 +372,8 @@ background-image: url(../img/arrow-hover.png);
 .answer button.downvote:hover {
     background-image: url(../img/arrow-hover-downvote.png);
 }
-.answer button.upvote:active{
-background-image: url(../img/arrow-active.png);
+.answer button.upvote:active {
+    background-image: url(../img/arrow-active.png);
 }
 .answer button.downvote:active {
     background-image: url(../img/arrow-active-downvote.png);
