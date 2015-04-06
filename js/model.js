@@ -7,9 +7,17 @@ function question(ID, userID, title, content) {
 		this.upvotes = 0;
 		this.followed = false;
 		this.views = 1;
-        this.profile = "user"+
-                (Math.floor(Math.random()*(9-1)))+
-                ".jpg";
+        var picChoose = Math.floor(Math.random()*(3-1));
+        if (picChoose > 0)
+        {
+            this.profile = "user"+
+                    (Math.floor(Math.random()*(9-1))+1)+
+                    ".jpg";
+        }
+        else 
+        {
+            this.profile = 'user0.jpg';
+        }
 }
 
 
