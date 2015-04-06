@@ -507,10 +507,18 @@ background-image: url(../img/arrow-hover.png);
 #ask .buttons button:active {
     background-color: hsl(78,5%,93%);
 }
+
+#answer-box .buttons button.selected,
+#ask .buttons button.selected {
+    background-color: hsl(78,45%,63%);
+}
 #answer-box .buttons button.input,
 #ask .buttons button.input {
     width: 35px;
-    margin-right: 3px;
+}
+#ask .buttons > div:first-child button,
+#answer-box .buttons > div:first-child button {
+    margin: 0 3px 0 0;
 }
 
 

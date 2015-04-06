@@ -229,6 +229,7 @@ function model(){
         var userID = this.allUsers.length;
         var answerID = this.allAnswers.length;
 		var newanswer = new answer(answerID, userID, qid, content);
+        newanswer.profile = profilePic;
 		this.allAnswers.push(newanswer);
 	}
 	

@@ -337,7 +337,12 @@ function settingsHandler()
 function submitNewQHandler()
 {
     var title = document.getElementById('ask').getElementsByTagName('TEXTAREA')[0].value;
-    m.submitQuestion('user5.jpg',title,title);    
+    var profilePic = 'user5.jpg';
+    var className = document.querySelector('#ask .buttons button:last-child').className.trim();
+    console.log('class name: ' + className);
+    if (className === 'selected' || className.split('selected').length > 1)
+        profilePic = 'user0.jpg';
+    m.submitQuestion(profilePic,title,title);    
     hideAsks();
     clearSearchBar();
     currentSortOrder = "New Question";
@@ -364,6 +369,14 @@ function homepage()
 function clearSearchBar()
 {
     document.getElementById('searchBox').value = '';
+}
+
+function anonHandler(event)
+{
+    if (event.className.split('selected').length > 1)
+        event.className = event.className.split('selected').join(' ');
+    else
+        event.className = event.className + ' selected';
 }
 
 
