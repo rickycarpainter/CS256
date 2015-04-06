@@ -60,11 +60,11 @@ function loadModelDummyData(model){
 		model.allUsers.push(user4);
 		
 		// ID, userID, title, content
-		var question1 = new question(0,0,"What is Photosynthesis?","I was really confused about the photosynthesis lecture.  Please tell me what it is with pix plz.");
+		var question1 = new question(0,0,"What is Photosynthesis?","I was really confused about the photosynthesis lecture.  Please tell me what it is with pix plz. plant");
 		question1.dateSubmitted.setDate(5);
 		question1.upvotes = 3;
 		model.allQuestions.push(question1);
-		var question2 = new question(1,1,"What do mitochondria do?","I was really confused about mitochondria.  Pix please!  I can't lose my scholarship...");
+		var question2 = new question(1,1,"What do mitochondria do?","I was really confused about mitochondria.  Pix please!  I can't lose my scholarship... cell");
 		question2.dateSubmitted.setDate(8);
 		question2.upvotes = 5;
 		model.allQuestions.push(question2);
@@ -110,7 +110,6 @@ function model(){
 	this.allUsers = [];
 	
 	this.getQuestions = function(sortOrder,searchValue){
-        console.log("in getQuestions, length: " + this.allQuestions.length);
 		if(sortOrder === "Upvotes"){
 			this.allQuestions.sort(function(a,b){
 				if(a.upvotes < b.upvotes){
@@ -152,7 +151,9 @@ function model(){
         }
 		for(var i = 0; i < loopLength; i++){
 			var currentQuestion = this.allQuestions[i];
-			if (currentQuestion.title.toLowerCase().indexOf(searchValue) > -1){
+			if (currentQuestion.title.toLowerCase().indexOf(searchValue) > -1 ||
+                currentQuestion.content.toLowerCase().indexOf(searchValue) > -1)
+            {
 				result.push(currentQuestion);
 			}
 		}

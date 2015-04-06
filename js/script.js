@@ -389,9 +389,15 @@ function hideSortOptions()
     document.getElementById('sort-by-options').style.display = 'none';
 }
 
+function changeSortByText(text)
+{
+    document.querySelector('.sort-by').innerHTML = 'Sort by: ' + text;
+}
+
 function sortByUpvotes()
 {
     hideSortOptions();
+    changeSortByText('upvotes');
     currentSortOrder = 'Upvotes';
     initialDataLoad('');
 }
@@ -399,9 +405,18 @@ function sortByUpvotes()
 function sortByRecent()
 {
     hideSortOptions();
+    changeSortByText('recent');
     currentSortOrder = 'Date Submitted';
     initialDataLoad('');
     
+}
+
+function showTag(event)
+{
+    var searchTerm = event.innerHTML.trim().toLowerCase();
+    if (searchTerm.charAt(searchTerm.length - 1) === 's')
+        searchTerm = searchTerm.substring(0, searchTerm.length-1);
+    initialDataLoad(searchTerm);
 }
 
 

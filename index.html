@@ -41,7 +41,7 @@
         </div>
 
         <div class="right-column">
-            <button onclick='sortByHandler(this)'>Sort by: upvotes</button>
+            <button class='sort-by' onclick='sortByHandler(this)'>Sort by: upvotes</button>
             <div id='sort-by-options'>
                 <ul>
                     <li><a onclick='sortByUpvotes()'>Upvotes</a></li>
@@ -52,9 +52,9 @@
                 <div>
                     <h4>Popular Tags</h4>
                     <ul>
-                        <li><a href="http://google.com">Cells</a></li>
-                        <li><a href="http://google.com">Plants</a></li>
-                        <li><a href="http://google.com">Animals</a></li>
+                        <li><a onclick='showTag(this)'>Cells</a></li>
+                        <li><a onclick='showTag(this)'>Plants</a></li>
+                        <li><a onclick='showTag(this)'>Animals</a></li>
                     </ul>
                 </div>
             </div>
