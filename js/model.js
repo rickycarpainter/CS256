@@ -8,7 +8,7 @@ function question(ID, userID, title, content) {
 		this.followed = false;
 		this.views = 1;
         this.profile = "user"+
-                (Math.floor(Math.random()*(9-1))+1)+
+                (Math.floor(Math.random()*(9-1)))+
                 ".jpg";
 }
 

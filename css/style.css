@@ -464,8 +464,33 @@ background-image: url(../img/arrow-hover.png);
 
 #answer-box .buttons,
 #ask .buttons {
-    width: 345px;
+    width: 92%;
     margin: 10px auto 0;
+
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+
+    -webkit-align-items: center;
+    align-items: center;
+}
+#ask .buttons > div:first-child,
+#answer-box .buttons > div:first-child {
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+
+    -webkit-align-items: center;
+    align-items: center;
+}
+#answer-box .buttons img,
+#ask .buttons img {
+    width: 100%;
+    max-height: 100%;
 }
 #answer-box .buttons button,
 #ask .buttons button {
@@ -485,6 +510,7 @@ background-image: url(../img/arrow-hover.png);
 #answer-box .buttons button.input,
 #ask .buttons button.input {
     width: 35px;
+    margin-right: 3px;
 }
 
 
