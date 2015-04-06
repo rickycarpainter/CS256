@@ -3,10 +3,7 @@
 Ordered by priority, highest at the top. Finished tasks move to bottom
 
 ## HTML
- - [ ] style buttons in question input box (look at Ricky's last mockup)
- - [ ] icons in first few buttons of question input box (look at Ricky's last mockup)
- - [ ] add Ask New button
- - [ ] add Follow and Answer button
+ - [ ] add Follow button
  - [ ] add Sort By button and box of options
  - [ ] test what happens with a really long question...
  - [ ] add viewcount
@@ -14,15 +11,19 @@ Ordered by priority, highest at the top. Finished tasks move to bottom
  - [x] style answers
  - [x] add pictures! :)
  - [x] add input boxes for typing new answers and questions
+ - [x] style buttons in question input box (look at Ricky's last mockup)
+ - [x] icons in first few buttons of question input box (look at Ricky's last mockup)
+ - [x] add Answer button
+ - [x] add Ask New button
 
 ## Javascript
- - [ ] hide ask new question box (display: none;) and show on click Ask New
- - [ ] load questions and answers ordered
  - [ ] sort by
  - [ ] viewcount
  - [x] search
  - [x] fix arrow click so that it changes the vote count
  - [x] fix search so it isn&rsquo;t one keystroke behind
+ - [x] hide ask new question box (display: none;) and show on click Ask New
+ - [x] load questions and answers ordered
 
 ## From critique
  - [ ] transitions instead of jump loading of new answers? this is easy in
