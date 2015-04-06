@@ -7,6 +7,9 @@ function initializeVariables()
 
 function initialDataLoad(searchValue)
 {
+    if (searchValue === '')
+        hideAsks();
+
 	var questions = m.getQuestions(currentSortOrder,searchValue);
 	var questionList = document.getElementsByClassName('question-list')[0];
 
@@ -36,6 +39,7 @@ function initialDataLoad(searchValue)
 
         questionDiv.onclick = function(event) 
             { 
+                hideAsks();
                 var questionEl = event.target;
                 while (questionEl.className !== "question")
                 {
@@ -245,9 +249,63 @@ function openQuestion(questionEl)
 
         answerListDiv.appendChild(newAnswer);
 	}
+    var answerQuestionEl = document.createElement('div');
+        answerQuestionEl.id = 'answer-q-btn';
+    var answerQuestionBtn = document.createElement('button');
+        answerQuestionBtn.className = 'submit';
+        //answerQuestionBtn.onclick = showAnswerBox();
+        answerQuestionBtn.setAttribute('onclick', 'showAnswerBox()');
+        answerQuestionBtn.innerHTML = 'Answer this';
+    answerQuestionEl.appendChild(answerQuestionBtn);
+
+    var answerBoxEl = document.createElement('div');
+        answerBoxEl.id = 'answer-box';
+    var answerTextArea = document.createElement('textarea');
+        answerTextArea.placeholder = 'Type a new answer...';
+    var answerButtonsEl = document.createElement('div');
+        answerButtonsEl.className = 'buttons';
+    var answerBoldBtn = document.createElement('button');
+        answerBoldBtn.className = 'input';
+        answerBoldBtn.innerHTML = 'B';
+    var answerPictureBtn = document.createElement('button');
+        answerPictureBtn.className = 'input';
+        answerPictureBtn.innerHTML = 'p';
+    var answerLinkBtn = document.createElement('button');
+        answerLinkBtn.className = 'input';
+        answerLinkBtn.innerHTML = 'l';
+    var answerSubmitBtn = document.createElement('button');
+        answerSubmitBtn.id = 'submit-new-a';
+        answerSubmitBtn.className = 'submit';
+        //answerSubmitBtn.onclick = 'submitNewAHandler()';
+        answerSubmitBtn.setAttribute('onclick', 'submitNewAHandler()');
+        answerSubmitBtn.innerHTML = 'Answer';
+    answerButtonsEl.appendChild(answerBoldBtn);
+    answerButtonsEl.appendChild(answerPictureBtn);
+    answerButtonsEl.appendChild(answerLinkBtn);
+    answerButtonsEl.appendChild(answerSubmitBtn);
+
+    answerBoxEl.appendChild(answerTextArea);
+    answerBoxEl.appendChild(answerButtonsEl);
+
+    answerListDiv.appendChild(answerQuestionEl);
+    answerListDiv.appendChild(answerBoxEl);
+
+
     questionEl.parentNode.insertBefore(answerListDiv, questionEl.nextSibling);
 
     console.log("added new answerList to questionList");
+}
+
+function showAnswerBox()
+{
+    document.getElementById('answer-q-btn').style.display = 'none';
+    document.getElementById('answer-box').style.display = 'block';
+}
+
+function hideAnswerBox()
+{
+    document.getElementById('answer-q-btn').style.display = 'block';
+    document.getElementById('answer-box').style.display = 'none';
 }
 
 function showAskBtn()
@@ -278,6 +336,13 @@ function submitNewQHandler() {
     hideAsks();
     currentSortOrder = "New Question";
     initialDataLoad('');
+}
+
+function submitNewAHandler() {
+    alert('Submit New A Handler');
+    //var title = document.getElementById('answer-box').getElementsByTagName('TEXTAREA')[0].value;
+    //hideAnswerBox();
+    //openQuestion();
 }
 
 

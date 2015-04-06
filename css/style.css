@@ -408,23 +408,41 @@ background-image: url(../img/arrow-hover.png);
 }
 
 
-#ask-btn {
+#ask-btn,
+#answer-q-btn {
     margin: 0 auto 30px !important;
+}
+#ask-btn {
     display: none;
 }
-#ask-btn button {
+#answer-q-btn {
+    width: 98%;
+}
+#ask-btn button,
+#answer-q-btn button {
     height: 35px;
+}
+#answer-q-btn button {
+    display: block;
+    margin: 10px auto 0;
 }
 
 
-#ask {
+
+#ask,
+#answer-box {
     background-color: rgba(30,30,30,.3);
     padding: 1.25em 0;
     margin-bottom: 30px !important;
     display: none;
 }
+#answer-box {
+    width: 115%;
+    margin-top: 10px;
+}
 
-#ask textarea {
+#ask textarea,
+#answer-box textarea {
     height: 7em;
     display: block;
     margin: 0 auto;
@@ -435,27 +453,33 @@ background-image: url(../img/arrow-hover.png);
     border-radius: .2em;
     font-size: 1.5em;
 }
+#answer-box textarea:focus,
 #ask textarea:focus {
     outline: none;
     background-color: rgba(255,255,255,.9);
 }
 
+#answer-box .buttons,
 #ask .buttons {
-    width: 390px;
+    width: 345px;
     margin: 10px auto 0;
 }
+#answer-box .buttons button,
 #ask .buttons button {
     height: 35px;
     border: 0;
     background-color: hsl(78,5%,88%);
     box-shadow: 1px 1px 5px 1px rgba(100,100,100,.3);
 }
+#answer-box .buttons button:hover,
 #ask .buttons button:hover {
     background-color: hsl(78,5%,98%);
 }
+#answer-box .buttons button:active,
 #ask .buttons button:active {
     background-color: hsl(78,5%,93%);
 }
+#answer-box .buttons button.input,
 #ask .buttons button.input {
     width: 35px;
 }
