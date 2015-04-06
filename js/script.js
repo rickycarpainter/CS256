@@ -7,10 +7,13 @@ function initializeVariables()
 
 function initialDataLoad(searchValue)
 {
-    console.log("in init data load, search value: " + searchValue);
-
 	var questions = m.getQuestions(currentSortOrder,searchValue);
 	var questionList = document.getElementsByClassName('question-list')[0];
+
+
+    console.log("in init data load, search value: " + searchValue +
+                ",   number of questions: " + questions.length);
+
 
     var elesToDelete = questionList.getElementsByClassName('question');
     while (elesToDelete[0])
@@ -247,14 +250,22 @@ function openQuestion(questionEl)
     console.log("added new answerList to questionList");
 }
 
-function showAskBtn() {
+function showAskBtn()
+{
     document.getElementById('ask').style.display = 'none';
     document.getElementById('ask-btn').style.display = 'block';
 }
 
-function showAsk() {
+function showAsk()
+{
     document.getElementById('ask-btn').style.display = 'none';
     document.getElementById('ask').style.display = 'block';
+}
+
+function hideAsks()
+{
+    document.getElementById('ask-btn').style.display = 'none';
+    document.getElementById('ask').style.display = 'none';
 }
 
 function settingsHandler() {
@@ -262,7 +273,11 @@ function settingsHandler() {
 }
 
 function submitNewQHandler() {
-    alert("You clicked the submit new question button");
+    var title = document.getElementById('ask').getElementsByTagName('TEXTAREA')[0].value;
+    m.submitQuestion('user5.jpg',title,title);    
+    hideAsks();
+    currentSortOrder = "New Question";
+    initialDataLoad('');
 }
 
 
@@ -270,7 +285,7 @@ window.addEventListener("DOMContentLoaded", function()
 {
 	console.log("DOM loaded");
 	initializeVariables();
-    initialDataLoad(" ");
+    initialDataLoad("");
 	
 	var input = document.getElementById('searchBox');
 	

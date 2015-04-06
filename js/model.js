@@ -12,6 +12,20 @@ function question(ID, userID, title, content){
                 ".jpg";
 }
 
+/*function question(ID, userID, title, content, profilePicture)
+{
+		this.ID = ID;
+		this.userID = userID;
+		this.title = title;
+		this.content = content;
+		this.dateSubmitted = new Date();
+		this.upvotes = 0;
+		this.followed = false;
+		this.views = 1;
+        this.profile = profilePicture;
+}*/
+
+
 function answer(ID, userID, questionID, content){
 		this.ID = ID;
 		this.userID = userID;
@@ -101,6 +115,7 @@ function model(){
 	this.allUsers = [];
 	
 	this.getQuestions = function(sortOrder,searchValue){
+        console.log("in getQuestions, length: " + this.allQuestions.length);
 		if(sortOrder === "Upvotes"){
 			this.allQuestions.sort(function(a,b){
 				if(a.upvotes < b.upvotes){
@@ -132,8 +147,15 @@ function model(){
 				return 0;
 			});
 		}
+            
 		var result = [];
-		for(var i = 0; i < this.allQuestions.length; i++){
+        loopLength = this.allQuestions.length;
+        if (sortOrder === "New Question")
+        {
+            result.push(this.allQuestions[this.allQuestions.length-1]);
+            loopLength--;
+        }
+		for(var i = 0; i < loopLength; i++){
 			var currentQuestion = this.allQuestions[i];
 			if (currentQuestion.title.toLowerCase().indexOf(searchValue) > -1){
 				result.push(currentQuestion);
@@ -197,12 +219,18 @@ function model(){
 		return result;
 	};
 	
-	/*
-	this.submitQuestion = function(userID, title, content){
-		var question = new question(userID, title, content);
-		this.allQuestions.push(question);
-	}
 	
+	this.submitQuestion = function(profilePic, title, content){
+		var newquestion = new question(this.allQuestions.length,
+                                    this.allUsers.length,
+                                    title,
+                                    content);
+        newquestion.profile = profilePic;
+		this.allQuestions.push(newquestion);
+        console.log("in submitQuestion, allQuestions.length: " + this.allQuestions.length);
+	}
+
+    /*
 	this.submitAnswer = function(userID, questionID, content){
 		var answer = new answer(userID, questionID, content);
 		this.allAnswers.push(answer);
@@ -229,6 +257,3 @@ var user2questions = m.getQuestionsForUser(1);
 var user1questions = m.getQuestionsForUser(0);
 var user3answers = m.getAnswersForUser(3);
 console.log("gets here");
-
-
-
