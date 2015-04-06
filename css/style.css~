@@ -372,11 +372,9 @@ background-image: url(../img/arrow-hover.png);
 .answer button.downvote:hover {
     background-image: url(../img/arrow-hover-downvote.png);
 }
-.answer button.upvote:active{
-background-image: url(../img/arrow-active.png);
-}
+.answer button.upvote:active,
 .answer button.downvote:active {
-    background-image: url(../img/arrow-active-downvote.png);
+    background-image: url(../img/arrow-active.png);
 }
 .answer .score {
     font-size: 1.5em;
