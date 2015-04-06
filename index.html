@@ -40,14 +40,23 @@
 
         </div>
 
-        <div class="tag-list">
-            <div>
-                <h4>Popular Tags</h4>
+        <div class="right-column">
+            <button onclick='sortByHandler(this)'>Sort by: upvotes</button>
+            <div id='sort-by-options'>
                 <ul>
-                    <li><a href="http://google.com">Cells</a></li>
-                    <li><a href="http://google.com">Plants</a></li>
-                    <li><a href="http://google.com">Animals</a></li>
+                    <li><a onclick='sortByUpvotes()'>Upvotes</a></li>
+                    <li><a onclick='sortByRecent()'>Recent</a></li>
                 </ul>
+            </div>
+            <div class="tag-list">
+                <div>
+                    <h4>Popular Tags</h4>
+                    <ul>
+                        <li><a href="http://google.com">Cells</a></li>
+                        <li><a href="http://google.com">Plants</a></li>
+                        <li><a href="http://google.com">Animals</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </article>

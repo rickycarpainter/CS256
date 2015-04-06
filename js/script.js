@@ -379,6 +379,31 @@ function anonHandler(event)
         event.className = event.className + ' selected';
 }
 
+function sortByHandler(event)
+{
+    document.getElementById('sort-by-options').style.display = 'block';
+}
+
+function hideSortOptions()
+{
+    document.getElementById('sort-by-options').style.display = 'none';
+}
+
+function sortByUpvotes()
+{
+    hideSortOptions();
+    currentSortOrder = 'Upvotes';
+    initialDataLoad('');
+}
+
+function sortByRecent()
+{
+    hideSortOptions();
+    currentSortOrder = 'Date Submitted';
+    initialDataLoad('');
+    
+}
+
 
 window.addEventListener("DOMContentLoaded", function()
 {
