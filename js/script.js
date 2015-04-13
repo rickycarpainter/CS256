@@ -47,13 +47,19 @@ function initialDataLoad(searchValue)
                         return;
                     questionEl = questionEl.parentNode;
                 }
-                if (questionEl.nextSibling.className !== "answer-list")
-                    openQuestion(questionEl)
-                else
+
+                if (questionEl.nextSibling) 
                 {
-                    var elToDelete = questionEl.nextSibling;
-                    elToDelete.parentNode.removeChild(elToDelete);
+                    if (questionEl.nextSibling.className !== "answer-list")
+                        openQuestion(questionEl);
+                    else
+                    {
+                        var elToDelete = questionEl.nextSibling;
+                        elToDelete.parentNode.removeChild(elToDelete);
+                    }
                 }
+                else
+                    openQuestion(questionEl);
             };
 
         var voteDiv = document.createElement('div');
