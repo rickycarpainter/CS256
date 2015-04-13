@@ -328,6 +328,7 @@ function showAsk()
     var ask_box_el = document.getElementById('ask');
     var textarea = ask_box_el.getElementsByTagName('TEXTAREA')[0];
     ask_box_el.style.display = 'block';
+    textarea.focus();
     var value = document.getElementById('searchBox').value.trim();
     if (value != '')
     {
@@ -338,7 +339,6 @@ function showAsk()
     {
         textarea.addAttribute('placeholder', 'Type a new question...');
     }
-    textarea.focus();
 }
 
 function hideAsks()
