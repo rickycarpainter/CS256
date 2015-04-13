@@ -3,8 +3,8 @@
 Ordered by priority, highest at the top. Finished tasks move to bottom
 
 ## HTML
+ - [ ] user page
  - [ ] add Follow button
- - [ ] add Sort By button and box of options
  - [ ] test what happens with a really long question...
  - [ ] add viewcount
  - [ ] teacher outline
@@ -15,15 +15,18 @@ Ordered by priority, highest at the top. Finished tasks move to bottom
  - [x] icons in first few buttons of question input box (look at Ricky's last mockup)
  - [x] add Answer button
  - [x] add Ask New button
+ - [x] add Sort By button and box of options
 
 ## Javascript
- - [ ] sort by
+ - [ ] autofill textarea from search bar
  - [ ] viewcount
  - [x] search
  - [x] fix arrow click so that it changes the vote count
  - [x] fix search so it isn&rsquo;t one keystroke behind
  - [x] hide ask new question box (display: none;) and show on click Ask New
  - [x] load questions and answers ordered
+ - [x] sort by
+ - [x] collapse on reclick
 
 ## From critique
  - [ ] transitions instead of jump loading of new answers? this is easy in

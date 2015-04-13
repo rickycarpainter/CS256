@@ -47,7 +47,13 @@ function initialDataLoad(searchValue)
                         return;
                     questionEl = questionEl.parentNode;
                 }
-                openQuestion(questionEl)
+                if (questionEl.nextSibling.className !== "answer-list")
+                    openQuestion(questionEl)
+                else
+                {
+                    var elToDelete = questionEl.nextSibling;
+                    elToDelete.parentNode.removeChild(elToDelete);
+                }
             };
 
         var voteDiv = document.createElement('div');
@@ -253,7 +259,6 @@ function openQuestion(questionEl)
         answerQuestionEl.id = 'answer-q-btn';
     var answerQuestionBtn = document.createElement('button');
         answerQuestionBtn.className = 'submit';
-        //answerQuestionBtn.onclick = showAnswerBox();
         answerQuestionBtn.setAttribute('onclick', 'showAnswerBox()');
         answerQuestionBtn.innerHTML = 'Answer this';
     answerQuestionEl.appendChild(answerQuestionBtn);
