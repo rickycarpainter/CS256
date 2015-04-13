@@ -18,7 +18,6 @@ Ordered by priority, highest at the top. Finished tasks move to bottom
  - [x] add Sort By button and box of options
 
 ## Javascript
- - [ ] autofill textarea from search bar
  - [ ] viewcount
  - [x] search
  - [x] fix arrow click so that it changes the vote count
@@ -27,6 +26,7 @@ Ordered by priority, highest at the top. Finished tasks move to bottom
  - [x] load questions and answers ordered
  - [x] sort by
  - [x] collapse on reclick
+ - [x] autofill textarea from search bar
 
 ## From critique
  - [ ] transitions instead of jump loading of new answers? this is easy in
