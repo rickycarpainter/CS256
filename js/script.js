@@ -324,8 +324,21 @@ function showAskBtn()
 function showAsk()
 {
     document.getElementById('ask-btn').style.display = 'none';
-    document.getElementById('ask').style.display = 'block';
-    document.getElementById('ask').getElementsByTagName('TEXTAREA')[0].focus();
+
+    var ask_box_el = document.getElementById('ask');
+    var textarea = ask_box_el.getElementsByTagName('TEXTAREA')[0];
+    ask_box_el.style.display = 'block';
+    var value = document.getElementById('searchBox').value.trim();
+    if (value != '')
+    {
+        textarea.removeAttribute('placeholder');
+        textarea.value = value;
+    }
+    else
+    {
+        textarea.addAttribute('placeholder', 'Type a new question...');
+    }
+    textarea.focus();
 }
 
 function hideAsks()
