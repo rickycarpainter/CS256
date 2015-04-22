@@ -417,8 +417,8 @@ input[type=text]:focus {
     -webkit-transform: scaleY(-1);
     transform: scaleY(-1);
 }
-.answer button.upvote:hover{
-background-image: url(../img/arrow-hover.png);
+.answer button.upvote:hover {
+    background-image: url(../img/arrow-hover.png);
 }
 .answer button.downvote:hover {
     background-image: url(../img/arrow-hover-downvote.png);
@@ -456,6 +456,8 @@ background-image: url(../img/arrow-hover.png);
 .profile img {
     max-width: 80%;
     max-height: 80%;
+    width: 80%;
+    height: 80%;
 }
 
 
